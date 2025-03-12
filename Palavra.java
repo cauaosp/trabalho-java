@@ -1,8 +1,10 @@
+import java.util.List;
+
 public class Palavra {
   String palavra;
-  int linhas;
+  List<Integer> linhas;
 
-  public Palavra(String palavra, int linhas){
+  public Palavra(String palavra, List<Integer> linhas) {
     this.palavra = palavra;
     this.linhas = linhas;
   }
@@ -11,12 +13,12 @@ public class Palavra {
     return palavra;
   }
 
-  public int getLinhas() {
+  public List<Integer> getLinhas() {
     return linhas;
   }
 
   @Override
   public String toString() {
-      return palavra + ": " + linhas;
+    return palavra + ": " + linhas;
   }
 }
