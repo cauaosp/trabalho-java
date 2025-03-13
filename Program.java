@@ -27,10 +27,11 @@ public class Program {
     Palavra palavra2 = new Palavra("world", List.of(2, 4, 6));
     Palavra palavra3 = new Palavra("teste", List.of(7, 8, 9));
 
-    manipuladorFila.adicionarPalavra(fila, palavra1);
-    manipuladorFila.adicionarPalavra(fila, palavra2);
-    manipuladorFila.adicionarPalavra(fila, palavra3);
+    while (fila.inicio != null) {
+      Palavra valorRemovido = manipuladorFila.retirarPalavra(fila);
+      System.out.println(
+          valorRemovido.getPalavra() + " " + valorRemovido.getLinhas().toString().replace("[", "").replace("]", ""));
+    }
 
-    manipuladorFila.display(fila);
   }
 }

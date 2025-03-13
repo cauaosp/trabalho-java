@@ -27,8 +27,9 @@ public class LeituraDeArquivos {
       while (line != null) {
         String[] field = line.split("\\s+");
         for (String palavra : field) {
-          texto_em_hash.putIfAbsent(palavra, new ArrayList<>());
-          texto_em_hash.get(palavra).add(linha);
+          String palavraPadronizada = palavra.replaceAll("[^a-zA-Z0-9-]", "").toLowerCase();
+          texto_em_hash.putIfAbsent(palavraPadronizada, new ArrayList<>());
+          texto_em_hash.get(palavraPadronizada).add(linha);
         }
         line = br.readLine();
         linha++;
